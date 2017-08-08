@@ -6,5 +6,5 @@ package com.objectpool.util;
  */
 public class Utils {
 
-	public static String lineSeparator = System.getProperty("line.separator", "\n");
+	public static final String lineSeparator = System.getProperty("line.separator", "\n");
 }
