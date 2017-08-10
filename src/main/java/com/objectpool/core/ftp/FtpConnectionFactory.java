@@ -74,4 +74,8 @@ public class FtpConnectionFactory extends DefaultObjectFactory<FTPClient> {
 		return send;
 	}
 
+	@Override
+	public String getStatus(FTPClient t) {
+		return super.getStatus(t);
+	}
 }
