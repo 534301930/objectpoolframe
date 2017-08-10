@@ -3,7 +3,7 @@ package com.objectpool.pooled.impl;
 import java.util.concurrent.TimeUnit;
 
 import com.objectpool.core.IObjectFactory;
-import com.objectpool.core.impl.DefaultObjectPool;
+import com.objectpool.core.impl.base.DefaultObjectPool;
 import com.objectpool.pooled.IPooledObject;
 import com.objectpool.util.Utils;
 

@@ -3,7 +3,7 @@ package com.objectpool.pooled.impl;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.objectpool.core.impl.DefaultObjectFactory;
+import com.objectpool.core.impl.base.DefaultObjectFactory;
 import com.objectpool.pooled.IPooledObject;
 import com.objectpool.pooled.IPooledObjectFactory;
 
@@ -48,8 +48,9 @@ public class DefaultPooledObjectFactory<T> implements IPooledObjectFactory<IPool
 		long lastBorrowTime = pooledObject.getLastBorrowTime();
 		long lastReturnTime = pooledObject.getLastReturnTime();
 		boolean valid = validObject(pooledObject);
-		String objectId = Integer.toHexString(pooledObject.getObject().hashCode());
-		return "{objectId : " + objectId + ", createTime : "
+		T t = pooledObject.getObject();
+		String objectId = Integer.toHexString(t.hashCode());
+		return "{object : " + t.getClass().getName() + "@" + objectId + ", createTime : "
 				+ getTime(createTime) + ", lastBorrowTime : "
 				+ getTime(lastBorrowTime) + ", lastReturnTime : "
 				+ getTime(lastReturnTime) + ", valid : " + valid + "}";

@@ -23,6 +23,6 @@ public abstract class DefaultObjectFactory<T> implements IObjectFactory<T> {
 		boolean valid = validObject(t);
 		int hashCode = t.hashCode();
 		String objectId = Integer.toHexString(hashCode);
-		return "{objectId : " + objectId + ", valid : " + valid + "}";
+		return "{object : " + t.getClass().getName() + "@" + objectId + ", valid : " + valid + "}";
 	}
 }
