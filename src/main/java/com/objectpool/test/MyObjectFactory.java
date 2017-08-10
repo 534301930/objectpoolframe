@@ -2,8 +2,11 @@ package com.objectpool.test;
 
 import java.util.UUID;
 
-import com.objectpool.core.impl.DefaultObjectFactory;
+import org.springframework.stereotype.Component;
 
+import com.objectpool.core.impl.base.DefaultObjectFactory;
+
+@Component
 public class MyObjectFactory extends DefaultObjectFactory<Person> {
 
 	@Override
